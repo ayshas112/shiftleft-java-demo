@@ -35,7 +35,7 @@ jobs:
       run: ${GITHUB_WORKSPACE}/sl analyze --strict --wait --app shiftleft-java-demo-new --tag branch=${{ github.head_ref || steps.extract_branch.outputs.branch }} --vcs-prefix-correction "io/shiftleft=src/main/java/" --java --cpg target/hello-shiftleft-0.0.1.jar
       env:
         SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
-      #  QWIET_EXTERNAL_SECRETS: ${{ secrets.QWIET_EXTERNAL_SECRETS }}
+        QWIET_EXTERNAL_SECRETS: ${{ secrets.QWIET_EXTERNAL_SECRETS }}
         
   Build-Rules: 
     runs-on: ubuntu-latest
@@ -56,5 +56,5 @@ jobs:
             --github-token=${{ secrets.GITHUB_TOKEN }}
       env:
         SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
-       # QWIET_EXTERNAL_SECRETS: ${{ secrets.QWIET_EXTERNAL_SECRETS }} 
+        QWIET_EXTERNAL_SECRETS: ${{ secrets.QWIET_EXTERNAL_SECRETS }} 
   
